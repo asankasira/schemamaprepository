@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="PurchaseOrder">	
+        <xs:complexType>
+       		<xs:sequence>        
+				<xs:element ref="Header"/>
+				<xs:element ref="Items"/>
+				<xs:element ref="Footer"/>
+				<xs:element ref="InvoiceTo"/>
+				<xs:element ref="DeliverTo"/>
+        	</xs:sequence>          
+		</xs:complexType>
+    </xs:element>
+	
+	<xs:element name="Header">
+        <xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Contact"/>
+				<xs:element ref="orderNum"/>
+				<xs:element ref="orderDate"/>
+				<xs:element ref="ourAccountCode"/>
+				<xs:element ref="yourAccountCode"/>
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>
+
+	<xs:element name="Contact">	
+        <xs:complexType>
+          <xs:sequence>          
+					<xs:element ref="contactName"/>
+					<xs:element ref="companyName"/>
+					<xs:element ref="email"/>
+					<xs:element ref="telephone"/>
+            </xs:sequence>            
+		</xs:complexType>
+    </xs:element>
+
+	<xs:element name="contactName" type="xs:string" />
+	<xs:element name="companyName" type="xs:string" />
+	<xs:element name="email" type="xs:string" />
+	<xs:element name="telephone" type="xs:string" />
+
+
+	<xs:element name="orderNum" type="xs:string" />
+	<xs:element name="orderDate" type="xs:string" />
+	<xs:element name="ourAccountCode" type="xs:string" />
+	<xs:element name="yourAccountCode" type="xs:string" />
+	
+	<xs:element name="Items">	
+        <xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Item"/>
+				<xs:element ref="itemCount"/>
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>
+	
+	<xs:element name="itemCount" type="xs:string" />
+	
+	<xs:element name="Item">  
+        <xs:complexType>
+         <xs:sequence>
+            		<xs:element ref="itemNumber"/>
+					<xs:element ref="yourPartNumber"/>
+					<xs:element ref="partNumber"/>
+					<xs:element ref="partDescription"/>
+					<xs:element ref="quantity"/>
+					<xs:element ref="unitOfMeasure"/>
+					<xs:element ref="unitPrice"/>
+					<xs:element ref="salesValue"/>			
+          </xs:sequence>            
+	  </xs:complexType>
+    </xs:element>
+
+	<xs:element name="itemNumber" type="xs:string" />
+	<xs:element name="yourPartNumber" type="xs:string" />
+	<xs:element name="partNumber" type="xs:string" />
+	<xs:element name="partDescription" type="xs:string" />
+	<xs:element name="quantity" type="xs:string" />
+	<xs:element name="unitOfMeasure" type="xs:string" />
+	<xs:element name="unitPrice" type="xs:string" />
+	<xs:element name="salesValue" type="xs:string" />	
+	
+	<xs:element name="InvoiceTo">		
+        <xs:complexType>
+        <xs:sequence>        
+				<xs:element  ref="Contact"/>
+				<xs:element  ref="Address"/>
+          </xs:sequence>
+		</xs:complexType>
+    </xs:element>
+	
+	<xs:element name="Address">		
+        <xs:complexType>
+          <xs:sequence>          
+					<xs:element ref="street1"/>
+					<xs:element ref="street2"/>
+					<xs:element ref="street3"/>
+					<xs:element ref="street4"/>
+					<xs:element ref="city"/>
+					<xs:element ref="stateProvince"/>
+					<xs:element ref="postalCode"/>
+					<xs:element ref="country"/>
+            </xs:sequence>
+		</xs:complexType>
+    </xs:element>
+
+	<xs:element name="street1" type="xs:string" />
+	<xs:element name="street2" type="xs:string" />
+	<xs:element name="street3" type="xs:string" />
+	<xs:element name="street4" type="xs:string" />
+	<xs:element name="city" type="xs:string" />
+	<xs:element name="stateProvince" type="xs:string" />
+	<xs:element name="postalCode" type="xs:string" />
+	<xs:element name="country" type="xs:string" />
+	
+	<xs:element name="Footer">		
+        <xs:complexType>
+          <xs:sequence>          
+					<xs:element ref="totalValue"/>
+            </xs:sequence>            
+		</xs:complexType>
+    </xs:element>
+	
+	<xs:element name="totalValue" type="xs:string" />
+	
+	<xs:element name="DeliverTo">		
+        <xs:complexType>
+        <xs:sequence>        
+				<xs:element  ref="Contact"/>
+				<xs:element  ref="Address"/>
+          </xs:sequence>          
+		</xs:complexType>
+    </xs:element>
+	
+</xs:schema>

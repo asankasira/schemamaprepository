@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PO>
+<POHeader>
+<poDate>27072010</poDate>
+<poNumber>012369899</poNumber>
+</POHeader>
+<Contact>
+<contactName>Steve Jobs</contactName>
+<contactFunctionCode>666</contactFunctionCode>
+<contactEmail>steve.jobs@apple.com</contactEmail>
+<contactPhone>01267898768</contactPhone>
+</Contact>
+<POShipTo>
+<entityidentifier>C</entityidentifier>
+<city>Washington</city>
+<attn>Obama</attn>
+<country>USA</country>
+<stateProvince>Washington DC</stateProvince>
+<street4>4</street4>
+<street3>3</street3>
+<street2>2</street2>
+<street1>1</street1>
+<postalCode>6464546</postalCode>
+</POShipTo>
+<POBillTo>
+<entityidentifier>C</entityidentifier>
+<city>Houston</city>
+<attn>George Bush</attn>
+<country>USA</country>
+<stateProvince>Rockets</stateProvince>
+<street4>four</street4>
+<street3>three</street3>
+<street2>two</street2>
+<street1>one</street1>
+<postalCode>996446</postalCode>
+</POBillTo>
+<POLines>
+<Item>
+<uom>0001</uom>
+<unitPrice>5.00</unitPrice>
+<qty>1000</qty>
+<partNo>I34-A34-09-O</partNo>
+<line>alpha</line>
+</Item>
+<startAt>6</startAt>
+<count>9</count>
+</POLines>
+</PO>

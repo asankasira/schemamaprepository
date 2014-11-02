@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  
+  ABC XML Message Schema
+  
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://abc" targetNamespace="http://abc">
+  
+  <xs:element name="CustomerOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="OrderHeader"/>        
+        <xs:element ref="OrderDetail"/> 
+        <xs:element ref="Supplier"/> 
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="OrderHeader" type="OrderHeaderDescription"/>
+  <xs:complexType name="OrderHeaderDescription">
+      <xs:sequence>
+        <xs:element ref="OrderHeaderDescription"/>
+      </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderHeaderDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CustomerMaster"/>
+        <xs:element ref="Shipto"/>
+        <xs:element ref="OrderMaster"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element> 
+  <xs:complexType name="CustomerMaster">
+        <xs:sequence>
+          <xs:element ref="CustomerMaster"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CustomerMaster">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element ref="CustomerID"/>
+          <xs:element ref="CustomerName"/>
+          <xs:element ref="Address1"/>
+          <xs:element ref="Address2"/>
+          <xs:element ref="City"/>
+          <xs:element ref="State"/>
+          <xs:element ref="Country"/>
+          <xs:element ref="Zip"/>        
+        </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  <xs:element name="CustomerID" type="xs:string" />
+  <xs:element name="CustomerName" type="xs:string" />
+  <xs:element name="Address1" type="xs:string" />
+  <xs:element name="Address2" type="xs:string" />
+  <xs:element name="City" type="xs:string" />
+  <xs:element name="State" type="xs:string" />
+  <xs:element name="Country" type="xs:string" />
+  <xs:element name="Zip" type="xs:string" />
+  
+  <xs:complexType name="Shipto">
+     <xs:sequence>
+        <xs:element ref="Shipto"/>
+     </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Shipto">
+        <xs:complexType>
+          <xs:sequence>            
+            <xs:element ref="ShiptoName"/>
+            <xs:element ref="Address1"/>
+            <xs:element ref="Address2"/>
+            <xs:element ref="City"/>
+            <xs:element ref="State"/>
+            <xs:element ref="Country"/>
+            <xs:element ref="Zip"/>        
+          </xs:sequence>
+        </xs:complexType>
+  </xs:element>
+  <xs:element name="ShiptoName" type="xs:string" />
+    
+  <xs:complexType name="OrderMaster">
+          <xs:sequence>
+            <xs:element ref="OrderMaster"/>
+          </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderMaster">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="OrderType"/>
+            <xs:element ref="OrderDate"/>
+            
+            <xs:element ref="CustomerPONo"/>
+            <xs:element ref="ShipVia"/>
+            <xs:element ref="FrightChargeCode"/>
+            <xs:element ref="FOBPoint"/>
+             
+            <xs:element ref="NetDays"/>   
+            <xs:element ref="CustomerOrderAmount"/>
+            <xs:element ref="CurrencyCode"/>
+            <xs:element ref="Billto"/>
+            <xs:element ref="ShipDate"/>
+            <xs:element ref="Text"/>
+          </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OrderType" type="xs:string" />
+    <xs:element name="OrderDate" type="xs:string" />
+    <xs:element name="CustomerPONo" type="xs:string" />
+    <xs:element name="ShipVia" type="xs:string" />
+    <xs:element name="FrightChargeCode" type="xs:string" />
+    <xs:element name="FOBPoint" type="xs:string" />
+    <xs:element name="NetDays" type="xs:string" />
+    <xs:element name="CustomerOrderAmount" type="xs:string" />
+    <xs:element name="CurrencyCode" type="xs:string" />
+    <xs:element name="Billto" type="xs:string" />
+    <xs:element name="ShipDate" type="xs:string" />
+    <xs:element name="Text" type="xs:string" />
+    
+    
+    <xs:element name="OrderDetail" type="OrderDetailDescription"/>
+      <xs:complexType name="OrderDetailDescription">
+          <xs:sequence>
+            <xs:element ref="OrderDetailDescription"/>
+          </xs:sequence>
+        </xs:complexType>
+      <xs:element name="OrderDetailDescription">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="COLineNo"/>
+            <xs:element ref="LineType"/>
+            <xs:element ref="CustomerItem"/>
+            <xs:element ref="CustomerItemDescription"/>
+            <xs:element ref="UM"/>
+            <xs:element ref="OrderQty"/>
+            <xs:element ref="RequestDate"/>
+            <xs:element ref="UnitPrice"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>          
+    
+      <xs:element name="COLineNo" type="xs:string" />
+      <xs:element name="LineType" type="xs:string" />
+      <xs:element name="CustomerItem" type="xs:string" />
+      <xs:element name="CustomerItemDescription" type="xs:string" />
+      <xs:element name="UM" type="xs:string" />
+      <xs:element name="OrderQty" type="xs:string" />
+      <xs:element name="RequestDate" type="xs:string" />
+      <xs:element name="UnitPrice" type="xs:string" />
+ 
+  <xs:element name="Supplier">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="SupplierID"/>
+              <xs:element ref="SupplierName"/>
+            </xs:sequence>
+          </xs:complexType>
+      </xs:element>       
+  <xs:element name="SupplierID" type="xs:string" />
+  <xs:element name="SupplierName" type="xs:string" />
+  
+</xs:schema>
